@@ -109,16 +109,21 @@
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(100vh) rotate(0deg);
                 opacity: 0;
             }
+
             10% {
                 opacity: 1;
             }
+
             90% {
                 opacity: 1;
             }
+
             50% {
                 transform: translateY(-10vh) translateX(50px) rotate(180deg);
             }
@@ -167,9 +172,12 @@
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
+
             50% {
                 transform: scale(1.1);
             }
@@ -221,9 +229,12 @@
         }
 
         @keyframes glow {
-            0%, 100% {
+
+            0%,
+            100% {
                 box-shadow: 0 0 20px rgba(74, 144, 226, 0.4), var(--shadow-lg);
             }
+
             50% {
                 box-shadow: 0 0 40px rgba(74, 144, 226, 0.8), var(--shadow-lg);
             }
@@ -293,6 +304,7 @@
                 opacity: 0;
                 transform: translateY(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -308,9 +320,12 @@
         }
 
         @keyframes bounce {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(-10px);
             }
@@ -337,6 +352,7 @@
                 opacity: 0;
                 transform: scale(0.9);
             }
+
             to {
                 opacity: 1;
                 transform: scale(1);
@@ -346,20 +362,24 @@
         /* Photo Placeholder */
         .photo-container {
             text-align: center;
+            margin: 0 auto;
             margin-bottom: var(--space-32);
             position: relative;
+            width: 100%;
         }
 
         .photo-decorations {
             position: relative;
             display: inline-block;
+            margin: 0 auto;
+            width: 100%;
         }
 
         .photo-frame {
-            width: min(500px, 90vw);
-            height: min(400px, 72vw);
-            max-width: 500px;
-            max-height: 400px;
+            width: min(450px, 85vw);
+            height: min(360px, 68vw);
+            max-width: 450px;
+            max-height: 360px;
             margin: 0 auto;
             border: clamp(5px, 2vw, 10px) solid var(--color-primary);
             border-radius: var(--radius-xl);
@@ -377,10 +397,13 @@
         }
 
         @keyframes pulseGlow {
-            0%, 100% {
+
+            0%,
+            100% {
                 box-shadow: 0 0 20px rgba(74, 144, 226, 0.4), var(--shadow-lg);
                 transform: scale(1);
             }
+
             50% {
                 box-shadow: 0 0 40px rgba(74, 144, 226, 0.8), var(--shadow-lg);
                 transform: scale(1.02);
@@ -408,9 +431,12 @@
         }
 
         @keyframes float-decoration {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) rotate(0deg);
             }
+
             50% {
                 transform: translateY(-10px) rotate(10deg);
             }
@@ -447,10 +473,13 @@
         }
 
         @keyframes twinkle {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 0.5;
                 transform: scale(1);
             }
+
             50% {
                 opacity: 1;
                 transform: scale(1.2);
@@ -651,12 +680,16 @@
         }
 
         @keyframes tileClick {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
+
             25% {
                 transform: scale(1.2) rotate(5deg);
             }
+
             75% {
                 transform: scale(1.2) rotate(-5deg);
             }
@@ -869,7 +902,8 @@
                 </a>
             </div>
             <h2>🗺️ Venue Address</h2>
-            <p class="venue-description">#2, 3rd Cross Rd, C L Ramaiah Layout, Shampura, Kaval Bairasandra, Bengaluru, Karnataka 560032</p>
+            <p class="venue-description">#2, 3rd Cross Rd, C L Ramaiah Layout, Shampura, Kaval Bairasandra, Bengaluru,
+                Karnataka 560032</p>
         </section>
 
         <!-- Interactive Favorites Section -->
