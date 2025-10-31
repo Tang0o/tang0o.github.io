@@ -3,7 +3,6 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammed Arham's 3rd Birthday Celebration 🎉</title>
     <style>
@@ -110,21 +109,16 @@
         }
 
         @keyframes float {
-
-            0%,
-            100% {
+            0%, 100% {
                 transform: translateY(100vh) rotate(0deg);
                 opacity: 0;
             }
-
             10% {
                 opacity: 1;
             }
-
             90% {
                 opacity: 1;
             }
-
             50% {
                 transform: translateY(-10vh) translateX(50px) rotate(180deg);
             }
@@ -158,6 +152,9 @@
             font-size: 24px;
             z-index: 100;
             transition: all 0.3s ease;
+            /* Improved touch target */
+            min-width: 44px;
+            min-height: 44px;
         }
 
         .music-toggle:hover {
@@ -170,12 +167,9 @@
         }
 
         @keyframes pulse {
-
-            0%,
-            100% {
+            0%, 100% {
                 transform: scale(1);
             }
-
             50% {
                 transform: scale(1.1);
             }
@@ -193,7 +187,7 @@
         }
 
         .welcome-quote .quote-text {
-            font-size: 1.5rem;
+            font-size: clamp(1rem, 4vw, 1.5rem);
             font-style: italic;
             color: var(--color-primary);
             line-height: 1.6;
@@ -202,12 +196,12 @@
         }
 
         .welcome-quote .quote-icon {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 5vw, 2rem);
             margin-bottom: var(--space-8);
         }
 
         .welcome-quote h1 {
-            font-size: 3.5rem;
+            font-size: clamp(1.8rem, 7vw, 3.5rem);
             color: var(--color-primary);
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
             margin-bottom: var(--space-16);
@@ -218,7 +212,7 @@
         .countdown-section {
             background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
             border-radius: var(--radius-xl);
-            padding: var(--space-32);
+            padding: clamp(16px, 4vw, 32px);
             margin-bottom: var(--space-32);
             text-align: center;
             box-shadow: 0 0 30px rgba(74, 144, 226, 0.4), var(--shadow-lg);
@@ -227,12 +221,9 @@
         }
 
         @keyframes glow {
-
-            0%,
-            100% {
+            0%, 100% {
                 box-shadow: 0 0 20px rgba(74, 144, 226, 0.4), var(--shadow-lg);
             }
-
             50% {
                 box-shadow: 0 0 40px rgba(74, 144, 226, 0.8), var(--shadow-lg);
             }
@@ -240,7 +231,7 @@
 
         .countdown-section h2 {
             color: var(--color-white);
-            font-size: 2rem;
+            font-size: clamp(1.2rem, 5vw, 2rem);
             margin-bottom: var(--space-24);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
@@ -248,15 +239,15 @@
         .countdown-timer {
             display: flex;
             justify-content: center;
-            gap: var(--space-24);
+            gap: clamp(8px, 3vw, 24px);
             flex-wrap: wrap;
         }
 
         .countdown-item {
             background: rgba(255, 255, 255, 0.95);
             border-radius: var(--radius-lg);
-            padding: var(--space-16) var(--space-24);
-            min-width: 100px;
+            padding: clamp(8px, 2vw, 16px) clamp(12px, 3vw, 24px);
+            min-width: clamp(60px, 15vw, 100px);
             box-shadow: var(--shadow-md);
             transition: transform 0.3s ease;
         }
@@ -266,7 +257,7 @@
         }
 
         .countdown-number {
-            font-size: 3rem;
+            font-size: clamp(1.5rem, 6vw, 3rem);
             font-weight: bold;
             color: var(--color-primary);
             line-height: 1;
@@ -276,7 +267,7 @@
         }
 
         .countdown-label {
-            font-size: 1rem;
+            font-size: clamp(0.6rem, 2vw, 1rem);
             color: var(--color-text);
             font-weight: bold;
             text-transform: uppercase;
@@ -284,12 +275,11 @@
         }
 
         .date {
-            font-size: 2rem;
+            font-size: clamp(1.2rem, 4vw, 2rem);
             color: var(--color-background);
             font-weight: bold;
             margin: var(--space-16) 0;
         }
-
 
         /* Header Section */
         .header {
@@ -303,7 +293,6 @@
                 opacity: 0;
                 transform: translateY(-50px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -311,29 +300,24 @@
         }
 
         .header h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 7vw, 3.5rem);
             color: var(--color-primary);
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
             margin-bottom: var(--space-16);
             animation: bounce 2s ease-in-out infinite;
         }
 
-
-
         @keyframes bounce {
-
-            0%,
-            100% {
+            0%, 100% {
                 transform: translateY(0);
             }
-
             50% {
                 transform: translateY(-10px);
             }
         }
 
         .header .stars {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 5vw, 2rem);
             margin: var(--space-16) 0;
         }
 
@@ -341,7 +325,7 @@
         .invitation-card {
             background: var(--color-white);
             border-radius: var(--radius-xl);
-            padding: var(--space-32);
+            padding: clamp(16px, 4vw, 32px);
             box-shadow: var(--shadow-lg);
             margin-bottom: var(--space-32);
             border: 4px solid var(--color-primary);
@@ -353,7 +337,6 @@
                 opacity: 0;
                 transform: scale(0.9);
             }
-
             to {
                 opacity: 1;
                 transform: scale(1);
@@ -373,10 +356,12 @@
         }
 
         .photo-frame {
-            width: 500px;
-            height: 400px;
+            width: min(500px, 90vw);
+            height: min(400px, 72vw);
+            max-width: 500px;
+            max-height: 400px;
             margin: 0 auto;
-            border: 10px solid var(--color-primary);
+            border: clamp(5px, 2vw, 10px) solid var(--color-primary);
             border-radius: var(--radius-xl);
             background: linear-gradient(135deg, rgba(135, 206, 235, 0.3), rgba(74, 144, 226, 0.5));
             display: flex;
@@ -392,13 +377,10 @@
         }
 
         @keyframes pulseGlow {
-
-            0%,
-            100% {
+            0%, 100% {
                 box-shadow: 0 0 20px rgba(74, 144, 226, 0.4), var(--shadow-lg);
                 transform: scale(1);
             }
-
             50% {
                 box-shadow: 0 0 40px rgba(74, 144, 226, 0.8), var(--shadow-lg);
                 transform: scale(1.02);
@@ -408,9 +390,9 @@
         .photo-frame::before {
             content: '🎈';
             position: absolute;
-            font-size: 3rem;
-            top: -20px;
-            left: -20px;
+            font-size: clamp(2rem, 6vw, 3rem);
+            top: -10px;
+            left: -10px;
             animation: float-decoration 3s ease-in-out infinite;
             z-index: 10;
         }
@@ -418,20 +400,17 @@
         .photo-frame::after {
             content: '🎉';
             position: absolute;
-            font-size: 3rem;
-            top: -20px;
-            right: -20px;
+            font-size: clamp(2rem, 6vw, 3rem);
+            top: -10px;
+            right: -10px;
             animation: float-decoration 3s ease-in-out infinite 0.5s;
             z-index: 10;
         }
 
         @keyframes float-decoration {
-
-            0%,
-            100% {
+            0%, 100% {
                 transform: translateY(0) rotate(0deg);
             }
-
             50% {
                 transform: translateY(-10px) rotate(10deg);
             }
@@ -439,55 +418,42 @@
 
         .decoration-star {
             position: absolute;
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
             animation: twinkle 2s ease-in-out infinite;
         }
 
         .decoration-star:nth-child(1) {
-            bottom: -20px;
-            left: -20px;
+            bottom: -10px;
+            left: -10px;
             animation-delay: 0s;
         }
 
         .decoration-star:nth-child(2) {
-            bottom: -20px;
-            right: -20px;
+            bottom: -10px;
+            right: -10px;
             animation-delay: 0.3s;
         }
 
         .decoration-star:nth-child(3) {
             top: 50%;
-            left: -30px;
+            left: clamp(-20px, -4vw, -30px);
             animation-delay: 0.6s;
         }
 
         .decoration-star:nth-child(4) {
             top: 50%;
-            right: -30px;
+            right: clamp(-20px, -4vw, -30px);
             animation-delay: 0.9s;
         }
 
         @keyframes twinkle {
-
-            0%,
-            100% {
+            0%, 100% {
                 opacity: 0.5;
                 transform: scale(1);
             }
-
             50% {
                 opacity: 1;
                 transform: scale(1.2);
-            }
-        }
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
             }
         }
 
@@ -495,22 +461,20 @@
             text-align: center;
             z-index: 5;
             position: relative;
-
         }
 
         .photo-frame .name {
-            font-size: 2rem;
+            font-size: clamp(1.2rem, 4vw, 2rem);
             font-weight: bold;
             color: var(--color-primary);
             text-align: center;
             text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
             margin-bottom: var(--space-8);
             z-index: 1;
-
         }
 
         .photo-frame .age {
-            font-size: 5rem;
+            font-size: clamp(3rem, 10vw, 5rem);
             font-weight: bold;
             color: var(--color-highlight);
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
@@ -519,7 +483,7 @@
         }
 
         .photo-frame .age-label {
-            font-size: 1.3rem;
+            font-size: clamp(0.9rem, 3vw, 1.3rem);
             font-weight: bold;
             color: var(--color-primary);
             text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
@@ -532,33 +496,32 @@
         }
 
         .invitation-text .messagetitle {
-            font-size: 1.8rem;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
             font-weight: bold;
             line-height: 1.6;
             color: var(--color-text);
         }
 
         .invitation-text .message {
-            font-size: 1.5rem;
+            font-size: clamp(1rem, 3.5vw, 1.5rem);
             line-height: 1.6;
             margin-bottom: var(--space-24);
             color: var(--color-text);
         }
 
         .invitation-text .child-name {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
             font-weight: bold;
             color: var(--color-primary);
             margin: var(--space-16) 0;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-
         /* Venue Section */
         .venue-section {
             background: var(--color-white);
             border-radius: var(--radius-xl);
-            padding: var(--space-32);
+            padding: clamp(16px, 4vw, 32px);
             box-shadow: var(--shadow-lg);
             margin-bottom: var(--space-32);
             border: 4px solid var(--color-secondary);
@@ -566,13 +529,13 @@
 
         .venue-section h2 {
             color: var(--color-primary);
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 5vw, 2rem);
             margin-bottom: var(--space-16);
             text-align: center;
         }
 
         .venue-description {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
             line-height: 1.6;
             margin-bottom: var(--space-24);
             text-align: center;
@@ -582,7 +545,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: var(--space-16);
+            gap: clamp(8px, 2vw, 16px);
             margin-bottom: var(--space-24);
         }
 
@@ -591,7 +554,7 @@
             color: var(--color-text);
             padding: var(--space-8) var(--space-16);
             border-radius: 20px;
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
             font-weight: bold;
         }
 
@@ -601,15 +564,17 @@
             gap: var(--space-8);
             background: var(--color-primary);
             color: var(--color-white);
-            padding: var(--space-16) var(--space-32);
+            padding: clamp(12px, 3vw, 16px) clamp(20px, 5vw, 32px);
             border-radius: var(--radius-lg);
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
             font-weight: bold;
             text-decoration: none;
             box-shadow: var(--shadow-md);
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            /* Improved touch target */
+            min-height: 44px;
         }
 
         .map-button:hover {
@@ -626,7 +591,7 @@
         .favorites-section {
             background: var(--color-white);
             border-radius: var(--radius-xl);
-            padding: var(--space-32);
+            padding: clamp(16px, 4vw, 32px);
             box-shadow: var(--shadow-lg);
             margin-bottom: var(--space-32);
             border: 4px solid var(--color-highlight);
@@ -634,28 +599,28 @@
 
         .favorites-section h2 {
             color: var(--color-primary);
-            font-size: 2rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
             margin-bottom: var(--space-8);
             text-align: center;
         }
 
         .favorites-section .subtitle {
             color: var(--color-text);
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
             margin-bottom: var(--space-24);
             text-align: center;
         }
 
         .tiles-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: var(--space-16);
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: clamp(12px, 3vw, 16px);
         }
 
         .tile {
             background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
             border-radius: var(--radius-lg);
-            padding: var(--space-24);
+            padding: clamp(16px, 4vw, 24px);
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -663,10 +628,16 @@
             box-shadow: var(--shadow-md);
             position: relative;
             overflow: hidden;
+            /* Improved touch target */
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .tile:hover {
-            transform: scale(1.1) rotate(2deg);
+            transform: scale(1.05) rotate(2deg);
             box-shadow: 0 0 20px rgba(74, 144, 226, 0.6);
             border-color: var(--color-highlight);
         }
@@ -680,29 +651,25 @@
         }
 
         @keyframes tileClick {
-
-            0%,
-            100% {
+            0%, 100% {
                 transform: scale(1);
             }
-
             25% {
                 transform: scale(1.2) rotate(5deg);
             }
-
             75% {
                 transform: scale(1.2) rotate(-5deg);
             }
         }
 
         .tile-emoji {
-            font-size: 3rem;
+            font-size: clamp(2rem, 7vw, 3rem);
             margin-bottom: var(--space-8);
             display: block;
         }
 
         .tile-label {
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
             font-weight: bold;
             color: var(--color-white);
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
@@ -712,103 +679,41 @@
         .footer {
             background: var(--color-white);
             border-radius: var(--radius-xl);
-            padding: var(--space-32);
+            padding: clamp(16px, 4vw, 32px);
             box-shadow: var(--shadow-lg);
             text-align: center;
             border: 4px solid var(--color-primary);
         }
 
         .footer .message {
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
             color: var(--color-primary);
             font-weight: bold;
             margin-bottom: var(--space-16);
         }
 
         .footer .emoji {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 5vw, 2rem);
         }
 
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .tiles-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .countdown-timer {
-                gap: var(--space-16);
-            }
-
-            .countdown-item {
-                min-width: 80px;
-                padding: var(--space-12) var(--space-16);
-            }
-
-            .countdown-number {
-                font-size: 2.5rem;
-            }
-
-            .photo-frame {
-                width: 500px;
-                height: 400px;
-            }
-        }
-
+        /* Enhanced Responsive Design */
         @media (max-width: 768px) {
-            .header .welcome-quote h1 {
-                font-size: 2.5rem;
-            }
-
-            .welcome-quote .quote-text {
-                font-size: 1.2rem;
-            }
-
-            .countdown-section h2 {
-                font-size: 1.2rem;
-            }
-
-            .countdown-item {
-                min-width: 70px;
-                padding: var(--space-12);
-            }
-
-            .countdown-number {
-                font-size: 2rem;
-            }
-
-            .countdown-label {
-                font-size: 0.7rem;
-            }
-
-            .invitation-card,
-            .venue-section,
-            .favorites-section,
-            .footer {
-                padding: var(--space-24);
+            .container {
+                padding: var(--space-16);
             }
 
             .tiles-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             }
 
-            .photo-frame {
-                width: 500px;
-                height: 400px;
-            }
-
-            .photo-frame .name {
-                font-size: 1.5rem;
-            }
-
-            .photo-frame .age {
-                font-size: 4rem;
-            }
-
-            .photo-frame .age-label {
-                font-size: 1rem;
+            .balloon {
+                width: 35px;
+                height: 50px;
             }
 
             .music-toggle {
+                bottom: var(--space-16);
+                right: var(--space-16);
                 width: 50px;
                 height: 50px;
                 font-size: 20px;
@@ -816,96 +721,51 @@
         }
 
         @media (max-width: 480px) {
-            .container {
-                padding: var(--space-16);
-            }
-
-            .header .welcome-quote h1 {
-                font-size: 2rem;
-            }
-
-            .welcome-quote .quote-text {
-                font-size: 1rem;
-                padding: 0 var(--space-8);
-            }
-
-            .countdown-section {
-                padding: var(--space-24) var(--space-16);
-            }
-
-            .countdown-section h2 {
-                font-size: 1rem;
+            .tiles-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .countdown-timer {
                 gap: var(--space-8);
             }
 
-            .countdown-item {
-                min-width: 60px;
-                padding: var(--space-8) var(--space-12);
+            .venue-features {
+                gap: var(--space-8);
             }
 
-            .countdown-number {
-                font-size: 1.8rem;
-            }
-
-            .countdown-label {
-                font-size: 0.6rem;
-            }
-
-            .invitation-text .child-name {
-                font-size: 2rem;
-            }
-
-            .photo-frame {
-                width: 180px;
-                height: 220px;
-            }
-
-            .photo-frame .name {
-                font-size: 1.2rem;
-            }
-
-            .photo-frame .age {
-                font-size: 3rem;
-            }
-
-            .photo-frame .age-label {
-                font-size: 0.9rem;
-            }
-
-            .photo-frame::before,
-            .photo-frame::after {
-                font-size: 2rem;
-            }
-
-            .decoration-star {
-                font-size: 1.5rem;
-            }
-
-            .tile-emoji {
-                font-size: 2.5rem;
-            }
-
-            .music-toggle {
-                bottom: var(--space-16);
-                right: var(--space-16);
+            .feature-tag {
+                padding: 6px 12px;
             }
         }
 
-        @media (max-width: 320px) {
-            .countdown-item {
-                min-width: 50px;
-                padding: var(--space-8);
+        @media (max-width: 360px) {
+            .container {
+                padding: 12px;
             }
 
-            .countdown-number {
-                font-size: 1.5rem;
+            .tiles-grid {
+                gap: 8px;
             }
 
-            .countdown-label {
-                font-size: 0.5rem;
+            .tile {
+                min-height: 80px;
+                padding: 12px;
+            }
+        }
+
+        /* Landscape orientation on mobile */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .photo-frame {
+                width: min(400px, 50vw);
+                height: min(320px, 40vw);
+            }
+
+            .countdown-section {
+                padding: var(--space-16);
+            }
+
+            .countdown-timer {
+                gap: var(--space-16);
             }
         }
     </style>
@@ -913,7 +773,7 @@
 
 <body>
     <!-- Confetti Canvas -->
-    <canvas id="confettiCanvas" width="1920" height="945"></canvas>
+    <canvas id="confettiCanvas"></canvas>
 
     <!-- Floating Balloons -->
     <div class="balloon"></div>
@@ -966,11 +826,9 @@
 
         <!-- Invitation Card -->
         <section class="invitation-card">
-
             <div class="invitation-text">
                 <p class="messagetitle">
                     Mrs. and Mr. Noorulla Shariff & Family<br>
-
                 </p>
                 <p class="message">
                     Invites you to celebrate the 3rd birthday of their grandson
@@ -979,9 +837,7 @@
                     <div class="photo-decorations">
                         <div class="photo-frame">
                             <div class="photo-placeholder-content">
-                                <!-- <span class="name">Muhammed Arham</span>
-                            <span class="age">3</span>
-                            <span class="age-label">Years Old</span> -->
+                                <!-- Photo content commented out as in original -->
                             </div>
                         </div>
                         <span class="decoration-star">⭐</span>
@@ -990,7 +846,6 @@
                         <span class="decoration-star">💫</span>
                     </div>
                 </div>
-
                 <div class="child-name">Muhammed Arham</div>
             </div>
         </section>
@@ -1013,8 +868,7 @@
                     📍 View Location on Google Maps
                 </a>
             </div>
-
-            <h2>🗺️ Venue Address 🗺️</h2> 
+            <h2>🗺️ Venue Address</h2>
             <p class="venue-description">#2, 3rd Cross Rd, C L Ramaiah Layout, Shampura, Kaval Bairasandra, Bengaluru, Karnataka 560032</p>
         </section>
 
@@ -1233,7 +1087,6 @@
                     oscillator.type = 'sawtooth';
                     frequency = 150;
                     duration = 0.5;
-                    // Revving effect
                     oscillator.frequency.setValueAtTime(150, audioContext.currentTime);
                     oscillator.frequency.linearRampToValueAtTime(300, audioContext.currentTime + 0.3);
                     break;
@@ -1241,7 +1094,6 @@
                     oscillator.type = 'square';
                     frequency = 200;
                     duration = 0.4;
-                    // Horn effect
                     oscillator.frequency.setValueAtTime(400, audioContext.currentTime);
                     oscillator.frequency.setValueAtTime(300, audioContext.currentTime + 0.2);
                     break;
@@ -1261,7 +1113,6 @@
                     oscillator.type = 'sine';
                     frequency = 800;
                     duration = 0.2;
-                    // Bubble sound
                     oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
                     oscillator.frequency.exponentialRampToValueAtTime(200, audioContext.currentTime + 0.2);
                     break;
@@ -1269,7 +1120,6 @@
                     oscillator.type = 'sawtooth';
                     frequency = 120;
                     duration = 0.6;
-                    // Roar effect
                     oscillator.frequency.setValueAtTime(120, audioContext.currentTime);
                     oscillator.frequency.linearRampToValueAtTime(80, audioContext.currentTime + 0.4);
                     break;
@@ -1290,7 +1140,6 @@
                     oscillator.type = 'sawtooth';
                     frequency = 180;
                     duration = 0.7;
-                    // Moo sound
                     oscillator.frequency.setValueAtTime(250, audioContext.currentTime);
                     oscillator.frequency.linearRampToValueAtTime(150, audioContext.currentTime + 0.5);
                     break;
@@ -1326,7 +1175,6 @@
                 document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
                 document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
             } else {
-                // If the date has passed
                 document.getElementById('days').textContent = '00';
                 document.getElementById('hours').textContent = '00';
                 document.getElementById('minutes').textContent = '00';
@@ -1336,18 +1184,13 @@
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
-            // Start confetti animation
             createConfetti();
-
-            // Start countdown timer
             updateCountdown();
             setInterval(updateCountdown, 1000);
 
-            // Music toggle event
             const musicToggle = document.getElementById('musicToggle');
             musicToggle.addEventListener('click', toggleBackgroundMusic);
 
-            // Tile click events
             const tiles = document.querySelectorAll('.tile');
             tiles.forEach(tile => {
                 tile.addEventListener('click', () => {
@@ -1360,7 +1203,6 @@
                 });
             });
 
-            // Auto-start music after a short delay (with user interaction)
             setTimeout(() => {
                 toggleBackgroundMusic();
             }, 1000);
