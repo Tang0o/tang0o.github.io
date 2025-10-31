@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammed Arham's 3rd Birthday Celebration 🎉</title>
+    <style>
+        /* Design System Variables */
+        :root {
+            --color-primary: #4A90E2;
+            --color-secondary: #87CEEB;
+            --color-accent: #1E90FF;
+            --color-background: #F0F8FF;
+            --color-text: #333333;
+            --color-highlight: #FFD700;
+            --color-white: #FFFFFF;
+            --space-8: 8px;
+            --space-16: 16px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --radius-base: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 20px;
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Arial', sans-serif;
+            background: linear-gradient(135deg, var(--color-background) 0%, var(--color-secondary) 100%);
+            color: var(--color-text);
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Confetti Canvas */
+        #confettiCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Floating Balloons */
+        .balloon {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            z-index: 1;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .balloon:nth-child(1) {
+            left: 10%;
+            background: #FF6B6B;
+            animation-delay: 0s;
+            animation-duration: 7s;
+        }
+
+        .balloon:nth-child(2) {
+            left: 30%;
+            background: #4ECDC4;
+            animation-delay: 1s;
+            animation-duration: 8s;
+        }
+
+        .balloon:nth-child(3) {
+            left: 50%;
+            background: #FFD93D;
+            animation-delay: 2s;
+            animation-duration: 9s;
+        }
+
+        .balloon:nth-child(4) {
+            left: 70%;
+            background: #95E1D3;
+            animation-delay: 3s;
+            animation-duration: 7.5s;
+        }
+
+        .balloon:nth-child(5) {
+            left: 90%;
+            background: #F38181;
+            animation-delay: 1.5s;
+            animation-duration: 8.5s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateY(-10vh) translateX(50px) rotate(180deg);
+            }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-24);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Music Toggle Button */
+        .music-toggle {
+            position: fixed;
+            bottom: var(--space-24);
+            right: var(--space-24);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: 3px solid var(--color-white);
+            box-shadow: var(--shadow-lg);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .music-toggle:hover {
+            transform: scale(1.1);
+            background: var(--color-accent);
+        }
+
+        .music-toggle.playing {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Welcome Quote Section */
+        .welcome-quote {
+            text-align: center;
+            margin-bottom: var(--space-32);
+            padding: var(--space-24);
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .welcome-quote .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--color-primary);
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            margin: 0;
+        }
+
+        .welcome-quote .quote-icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-8);
+        }
+
+        .welcome-quote h1 {
+            font-size: 3.5rem;
+            color: var(--color-primary);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: var(--space-16);
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        /* Countdown Timer */
+        .countdown-section {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            border-radius: var(--radius-xl);
+            padding: var(--space-32);
+            margin-bottom: var(--space-32);
+            text-align: center;
+            box-shadow: 0 0 30px rgba(74, 144, 226, 0.4), var(--shadow-lg);
+            border: 3px solid var(--color-white);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(74, 144, 226, 0.4), var(--shadow-lg);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(74, 144, 226, 0.8), var(--shadow-lg);
+            }
+        }
+
+        .countdown-section h2 {
+            color: var(--color-white);
+            font-size: 2rem;
+            margin-bottom: var(--space-24);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-24);
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-lg);
+            padding: var(--space-16) var(--space-24);
+            min-width: 100px;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .countdown-item:hover {
+            transform: scale(1.05);
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--color-primary);
+            line-height: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin-bottom: var(--space-8);
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            color: var(--color-text);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .date {
+            font-size: 2rem;
+            color: var(--color-background);
+            font-weight: bold;
+            margin: var(--space-16) 0;
+        }
+
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: var(--space-32);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            color: var(--color-primary);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: var(--space-16);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .header .stars {
+            font-size: 2rem;
+            margin: var(--space-16) 0;
+        }
+
+        /* Invitation Card */
+        .invitation-card {
+            background: var(--color-white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-32);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: var(--space-32);
+            border: 4px solid var(--color-primary);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Photo Placeholder */
+        .photo-container {
+            text-align: center;
+            margin-bottom: var(--space-32);
+            position: relative;
+        }
+
+        .photo-decorations {
+            position: relative;
+            display: inline-block;
+        }
+
+        .photo-frame {
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+            border: 10px solid var(--color-primary);
+            border-radius: var(--radius-xl);
+            background: linear-gradient(135deg, rgba(135, 206, 235, 0.3), rgba(74, 144, 226, 0.5));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(74, 144, 226, 0.5), var(--shadow-lg);
+            position: relative;
+            overflow: visible;
+            animation: pulseGlow 3s ease-in-out infinite;
+            background-image: url(Arham.jpeg);
+            background-size: 100% 100%;
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(74, 144, 226, 0.4), var(--shadow-lg);
+                transform: scale(1);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(74, 144, 226, 0.8), var(--shadow-lg);
+                transform: scale(1.02);
+            }
+        }
+
+        .photo-frame::before {
+            content: '🎈';
+            position: absolute;
+            font-size: 3rem;
+            top: -20px;
+            left: -20px;
+            animation: float-decoration 3s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        .photo-frame::after {
+            content: '🎉';
+            position: absolute;
+            font-size: 3rem;
+            top: -20px;
+            right: -20px;
+            animation: float-decoration 3s ease-in-out infinite 0.5s;
+            z-index: 10;
+        }
+
+        @keyframes float-decoration {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(10deg);
+            }
+        }
+
+        .decoration-star {
+            position: absolute;
+            font-size: 2rem;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+
+        .decoration-star:nth-child(1) {
+            bottom: -20px;
+            left: -20px;
+            animation-delay: 0s;
+        }
+
+        .decoration-star:nth-child(2) {
+            bottom: -20px;
+            right: -20px;
+            animation-delay: 0.3s;
+        }
+
+        .decoration-star:nth-child(3) {
+            top: 50%;
+            left: -30px;
+            animation-delay: 0.6s;
+        }
+
+        .decoration-star:nth-child(4) {
+            top: 50%;
+            right: -30px;
+            animation-delay: 0.9s;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .photo-placeholder-content {
+            text-align: center;
+            z-index: 5;
+            position: relative;
+
+        }
+
+        .photo-frame .name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--color-primary);
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--space-8);
+            z-index: 1;
+
+        }
+
+        .photo-frame .age {
+            font-size: 5rem;
+            font-weight: bold;
+            color: var(--color-highlight);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            margin: var(--space-16) 0;
+        }
+
+        .photo-frame .age-label {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--color-primary);
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Invitation Text */
+        .invitation-text {
+            text-align: center;
+            margin-bottom: var(--space-24);
+        }
+
+        .invitation-text .messagetitle {
+            font-size: 1.8rem;
+            font-weight: bold;
+            line-height: 1.6;
+            color: var(--color-text);
+        }
+
+        .invitation-text .message {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: var(--space-24);
+            color: var(--color-text);
+        }
+
+        .invitation-text .child-name {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--color-primary);
+            margin: var(--space-16) 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+
+        /* Venue Section */
+        .venue-section {
+            background: var(--color-white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-32);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: var(--space-32);
+            border: 4px solid var(--color-secondary);
+        }
+
+        .venue-section h2 {
+            color: var(--color-primary);
+            font-size: 2rem;
+            margin-bottom: var(--space-16);
+            text-align: center;
+        }
+
+        .venue-description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: var(--space-24);
+            text-align: center;
+        }
+
+        .venue-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--space-16);
+            margin-bottom: var(--space-24);
+        }
+
+        .feature-tag {
+            background: var(--color-secondary);
+            color: var(--color-text);
+            padding: var(--space-8) var(--space-16);
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .map-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-8);
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: var(--space-16) var(--space-32);
+            border-radius: var(--radius-lg);
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .map-button:hover {
+            background: var(--color-accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        /* Interactive Favorites Section */
+        .favorites-section {
+            background: var(--color-white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-32);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: var(--space-32);
+            border: 4px solid var(--color-highlight);
+        }
+
+        .favorites-section h2 {
+            color: var(--color-primary);
+            font-size: 2rem;
+            margin-bottom: var(--space-8);
+            text-align: center;
+        }
+
+        .favorites-section .subtitle {
+            color: var(--color-text);
+            font-size: 1.2rem;
+            margin-bottom: var(--space-24);
+            text-align: center;
+        }
+
+        .tiles-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: var(--space-16);
+        }
+
+        .tile {
+            background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+            border-radius: var(--radius-lg);
+            padding: var(--space-24);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid var(--color-white);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tile:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 0 20px rgba(74, 144, 226, 0.6);
+            border-color: var(--color-highlight);
+        }
+
+        .tile:active {
+            transform: scale(0.95);
+        }
+
+        .tile.clicked {
+            animation: tileClick 0.5s ease;
+        }
+
+        @keyframes tileClick {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.2) rotate(5deg);
+            }
+
+            75% {
+                transform: scale(1.2) rotate(-5deg);
+            }
+        }
+
+        .tile-emoji {
+            font-size: 3rem;
+            margin-bottom: var(--space-8);
+            display: block;
+        }
+
+        .tile-label {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--color-white);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-32);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            border: 4px solid var(--color-primary);
+        }
+
+        .footer .message {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            font-weight: bold;
+            margin-bottom: var(--space-16);
+        }
+
+        .footer .emoji {
+            font-size: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .tiles-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .countdown-timer {
+                gap: var(--space-16);
+            }
+
+            .countdown-item {
+                min-width: 80px;
+                padding: var(--space-12) var(--space-16);
+            }
+
+            .countdown-number {
+                font-size: 2.5rem;
+            }
+
+            .photo-frame {
+                width: 250px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .welcome-quote .quote-text {
+                font-size: 1.2rem;
+            }
+
+            .countdown-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .countdown-item {
+                min-width: 70px;
+                padding: var(--space-12);
+            }
+
+            .countdown-number {
+                font-size: 2rem;
+            }
+
+            .countdown-label {
+                font-size: 0.8rem;
+            }
+
+            .invitation-card,
+            .venue-section,
+            .favorites-section,
+            .footer {
+                padding: var(--space-24);
+            }
+
+            .tiles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .photo-frame {
+                width: 200px;
+                height: 250px;
+            }
+
+            .photo-frame .name {
+                font-size: 1.5rem;
+            }
+
+            .photo-frame .age {
+                font-size: 4rem;
+            }
+
+            .photo-frame .age-label {
+                font-size: 1rem;
+            }
+
+            .music-toggle {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: var(--space-16);
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .welcome-quote .quote-text {
+                font-size: 1rem;
+                padding: 0 var(--space-8);
+            }
+
+            .countdown-section {
+                padding: var(--space-24) var(--space-16);
+            }
+
+            .countdown-section h2 {
+                font-size: 1.2rem;
+            }
+
+            .countdown-timer {
+                gap: var(--space-8);
+            }
+
+            .countdown-item {
+                min-width: 60px;
+                padding: var(--space-8) var(--space-12);
+            }
+
+            .countdown-number {
+                font-size: 1.8rem;
+            }
+
+            .countdown-label {
+                font-size: 0.7rem;
+            }
+
+            .invitation-text .child-name {
+                font-size: 2rem;
+            }
+
+            .photo-frame {
+                width: 180px;
+                height: 220px;
+            }
+
+            .photo-frame .name {
+                font-size: 1.2rem;
+            }
+
+            .photo-frame .age {
+                font-size: 3rem;
+            }
+
+            .photo-frame .age-label {
+                font-size: 0.9rem;
+            }
+
+            .photo-frame::before,
+            .photo-frame::after {
+                font-size: 2rem;
+            }
+
+            .decoration-star {
+                font-size: 1.5rem;
+            }
+
+            .tile-emoji {
+                font-size: 2.5rem;
+            }
+
+            .music-toggle {
+                bottom: var(--space-16);
+                right: var(--space-16);
+            }
+        }
+
+        @media (max-width: 320px) {
+            .countdown-item {
+                min-width: 50px;
+                padding: var(--space-8);
+            }
+
+            .countdown-number {
+                font-size: 1.5rem;
+            }
+
+            .countdown-label {
+                font-size: 0.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas" width="1920" height="945"></canvas>
+
+    <!-- Floating Balloons -->
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+
+    <!-- Music Toggle Button -->
+    <button class="music-toggle playing" id="musicToggle" aria-label="Toggle background music">🎶</button>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Welcome Quote -->
+        <section class="welcome-quote">
+            <div class="quote-icon">✨</div>
+            <h1>🎉 Birthday Celebration! 🎉</h1>
+            <p class="quote-text">"Three years of giggles, three years of smiles, let's make more magical memories!"</p>
+        </section>
+
+        <!-- Countdown Timer -->
+        <section class="countdown-section">
+            <h2>⏰ Celebration Countdown ⏰</h2>
+            <div class="countdown-timer" id="countdownTimer">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">05</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">01</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">43</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">57</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+            <div class="date">📅 November 5, 2025</div>
+        </section>
+
+        <!-- Header -->
+        <header class="header">
+            <h1>🎉 You're Invited! 🎉</h1>
+            <div class="stars">⭐ ✨ 🌟 ✨ ⭐</div>
+        </header>
+
+        <!-- Invitation Card -->
+        <section class="invitation-card">
+
+            <div class="invitation-text">
+                <p class="messagetitle">
+                    Mrs. and Mr. Noorulla Shariff & Family<br>
+
+                </p>
+                <p class="message">
+                    invites you to celebrate the 3rd birthday of their grandson
+                </p>
+                <div class="photo-container">
+                    <div class="photo-decorations">
+                        <div class="photo-frame">
+                            <div class="photo-placeholder-content">
+                                <!-- <span class="name">Muhammed Arham</span>
+                            <span class="age">3</span>
+                            <span class="age-label">Years Old</span> -->
+                            </div>
+                        </div>
+                        <span class="decoration-star">⭐</span>
+                        <span class="decoration-star">✨</span>
+                        <span class="decoration-star">🌟</span>
+                        <span class="decoration-star">💫</span>
+                    </div>
+                </div>
+
+                <div class="child-name">Muhammed Arham</div>
+            </div>
+        </section>
+
+        <!-- Venue Section -->
+        <section class="venue-section">
+            <h2>🎪 Party Venue 🎪</h2>
+            <p class="venue-description">
+                Join us at Roll and Roar Kids Play Zone at 6 PM:
+            </p>
+            <div class="venue-features">
+                <span class="feature-tag">🛝 Slides</span>
+                <span class="feature-tag">⚽ Ball Pits</span>
+                <span class="feature-tag">🧱 Colorful Blocks</span>
+                <span class="feature-tag">🤸 Trampolines</span>
+                <span class="feature-tag">🎮 Exciting Games</span>
+            </div>
+            <div class="button-container">
+                <a href="https://maps.app.goo.gl/MTJiBoe4xBp8t4Xs8" target="_blank" class="map-button">
+                    📍 View Location on Google Maps
+                </a>
+            </div>
+        </section>
+
+        <!-- Interactive Favorites Section -->
+        <section class="favorites-section">
+            <h2>🌟 Arham's Favorite Things 🌟</h2>
+            <p class="subtitle">Tap to Hear Sounds!</p>
+            <div class="tiles-grid">
+                <div class="tile" data-sound="bike" data-name="Super Bikes">
+                    <span class="tile-emoji">🏍️</span>
+                    <div class="tile-label">Super Bikes</div>
+                </div>
+                <div class="tile" data-sound="car" data-name="Cars">
+                    <span class="tile-emoji">🚗</span>
+                    <div class="tile-label">Cars</div>
+                </div>
+                <div class="tile" data-sound="sheep" data-name="Sheep">
+                    <span class="tile-emoji">🐑</span>
+                    <div class="tile-label">Sheep</div>
+                </div>
+                <div class="tile" data-sound="goat" data-name="Goats">
+                    <span class="tile-emoji">🐐</span>
+                    <div class="tile-label">Goats</div>
+                </div>
+                <div class="tile" data-sound="fish" data-name="Fishes">
+                    <span class="tile-emoji">🐠</span>
+                    <div class="tile-label">Fishes</div>
+                </div>
+                <div class="tile" data-sound="tiger" data-name="Tigers">
+                    <span class="tile-emoji">🐯</span>
+                    <div class="tile-label">Tigers</div>
+                </div>
+                <div class="tile" data-sound="deer" data-name="Deer">
+                    <span class="tile-emoji">🦌</span>
+                    <div class="tile-label">Deer</div>
+                </div>
+                <div class="tile" data-sound="peacock" data-name="Peacocks">
+                    <span class="tile-emoji">🦚</span>
+                    <div class="tile-label">Peacocks</div>
+                </div>
+                <div class="tile" data-sound="cow" data-name="Cows">
+                    <span class="tile-emoji">🐄</span>
+                    <div class="tile-label">Cows</div>
+                </div>
+                <div class="tile" data-sound="turtle" data-name="Turtles">
+                    <span class="tile-emoji">🐢</span>
+                    <div class="tile-label">Turtles</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="message">We can't wait to celebrate with you!</p>
+            <div class="emoji">🎂 🎈 🎁 🎊 🎉</div>
+        </footer>
+    </div>
+
+    <script>
+        // Audio Context for generating sounds
+        let audioContext;
+        let backgroundMusicInterval;
+        let isMusicPlaying = false;
+
+        // Initialize Audio Context on first user interaction
+        function initAudio() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        // Confetti Animation
+        function createConfetti() {
+            const canvas = document.getElementById('confettiCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const confettiPieces = [];
+            const colors = ['#FF6B6B', '#4ECDC4', '#FFD93D', '#95E1D3', '#F38181', '#4A90E2', '#87CEEB', '#FFD700'];
+
+            class ConfettiPiece {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height - canvas.height;
+                    this.w = Math.random() * 10 + 5;
+                    this.h = Math.random() * 5 + 5;
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                    this.rotation = Math.random() * 360;
+                    this.rotationSpeed = Math.random() * 10 - 5;
+                    this.speedY = Math.random() * 3 + 2;
+                    this.speedX = Math.random() * 2 - 1;
+                }
+
+                update() {
+                    this.y += this.speedY;
+                    this.x += this.speedX;
+                    this.rotation += this.rotationSpeed;
+
+                    if (this.y > canvas.height) {
+                        this.y = -10;
+                        this.x = Math.random() * canvas.width;
+                    }
+                }
+
+                draw() {
+                    ctx.save();
+                    ctx.translate(this.x, this.y);
+                    ctx.rotate(this.rotation * Math.PI / 180);
+                    ctx.fillStyle = this.color;
+                    ctx.fillRect(-this.w / 2, -this.h / 2, this.w, this.h);
+                    ctx.restore();
+                }
+            }
+
+            for (let i = 0; i < 100; i++) {
+                confettiPieces.push(new ConfettiPiece());
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                confettiPieces.forEach(piece => {
+                    piece.update();
+                    piece.draw();
+                });
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        }
+
+        // Happy Birthday Melody (simplified version)
+        function playHappyBirthdayMelody() {
+            if (!audioContext) return;
+
+            const notes = [
+                { freq: 262, duration: 0.4 }, // C
+                { freq: 262, duration: 0.2 }, // C
+                { freq: 294, duration: 0.6 }, // D
+                { freq: 262, duration: 0.6 }, // C
+                { freq: 349, duration: 0.6 }, // F
+                { freq: 330, duration: 1.2 }, // E
+                { freq: 262, duration: 0.4 }, // C
+                { freq: 262, duration: 0.2 }, // C
+                { freq: 294, duration: 0.6 }, // D
+                { freq: 262, duration: 0.6 }, // C
+                { freq: 392, duration: 0.6 }, // G
+                { freq: 349, duration: 1.2 }  // F
+            ];
+
+            let currentTime = audioContext.currentTime;
+
+            notes.forEach((note, index) => {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+
+                oscillator.frequency.value = note.freq;
+                oscillator.type = 'sine';
+
+                gainNode.gain.setValueAtTime(0, currentTime);
+                gainNode.gain.linearRampToValueAtTime(0.3, currentTime + 0.01);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, currentTime + note.duration);
+
+                oscillator.start(currentTime);
+                oscillator.stop(currentTime + note.duration);
+
+                currentTime += note.duration;
+            });
+        }
+
+        // Start/Stop Background Music
+        function toggleBackgroundMusic() {
+            initAudio();
+            const musicToggle = document.getElementById('musicToggle');
+
+            if (isMusicPlaying) {
+                clearInterval(backgroundMusicInterval);
+                musicToggle.classList.remove('playing');
+                musicToggle.textContent = '🎵';
+                isMusicPlaying = false;
+            } else {
+                playHappyBirthdayMelody();
+                backgroundMusicInterval = setInterval(() => {
+                    playHappyBirthdayMelody();
+                }, 8000);
+                musicToggle.classList.add('playing');
+                musicToggle.textContent = '🎶';
+                isMusicPlaying = true;
+            }
+        }
+
+        // Sound effects for tiles
+        function playSound(soundType) {
+            initAudio();
+            if (!audioContext) return;
+
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+
+            let frequency = 440;
+            let duration = 0.3;
+
+            switch (soundType) {
+                case 'bike':
+                    oscillator.type = 'sawtooth';
+                    frequency = 150;
+                    duration = 0.5;
+                    // Revving effect
+                    oscillator.frequency.setValueAtTime(150, audioContext.currentTime);
+                    oscillator.frequency.linearRampToValueAtTime(300, audioContext.currentTime + 0.3);
+                    break;
+                case 'car':
+                    oscillator.type = 'square';
+                    frequency = 200;
+                    duration = 0.4;
+                    // Horn effect
+                    oscillator.frequency.setValueAtTime(400, audioContext.currentTime);
+                    oscillator.frequency.setValueAtTime(300, audioContext.currentTime + 0.2);
+                    break;
+                case 'sheep':
+                    oscillator.type = 'sine';
+                    frequency = 350;
+                    oscillator.frequency.setValueAtTime(350, audioContext.currentTime);
+                    oscillator.frequency.linearRampToValueAtTime(280, audioContext.currentTime + 0.3);
+                    break;
+                case 'goat':
+                    oscillator.type = 'triangle';
+                    frequency = 400;
+                    oscillator.frequency.setValueAtTime(400, audioContext.currentTime);
+                    oscillator.frequency.linearRampToValueAtTime(320, audioContext.currentTime + 0.25);
+                    break;
+                case 'fish':
+                    oscillator.type = 'sine';
+                    frequency = 800;
+                    duration = 0.2;
+                    // Bubble sound
+                    oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+                    oscillator.frequency.exponentialRampToValueAtTime(200, audioContext.currentTime + 0.2);
+                    break;
+                case 'tiger':
+                    oscillator.type = 'sawtooth';
+                    frequency = 120;
+                    duration = 0.6;
+                    // Roar effect
+                    oscillator.frequency.setValueAtTime(120, audioContext.currentTime);
+                    oscillator.frequency.linearRampToValueAtTime(80, audioContext.currentTime + 0.4);
+                    break;
+                case 'deer':
+                    oscillator.type = 'sine';
+                    frequency = 500;
+                    oscillator.frequency.setValueAtTime(500, audioContext.currentTime);
+                    oscillator.frequency.linearRampToValueAtTime(450, audioContext.currentTime + 0.2);
+                    break;
+                case 'peacock':
+                    oscillator.type = 'triangle';
+                    frequency = 600;
+                    oscillator.frequency.setValueAtTime(600, audioContext.currentTime);
+                    oscillator.frequency.linearRampToValueAtTime(700, audioContext.currentTime + 0.15);
+                    oscillator.frequency.linearRampToValueAtTime(550, audioContext.currentTime + 0.3);
+                    break;
+                case 'cow':
+                    oscillator.type = 'sawtooth';
+                    frequency = 180;
+                    duration = 0.7;
+                    // Moo sound
+                    oscillator.frequency.setValueAtTime(250, audioContext.currentTime);
+                    oscillator.frequency.linearRampToValueAtTime(150, audioContext.currentTime + 0.5);
+                    break;
+                case 'turtle':
+                    oscillator.type = 'sine';
+                    frequency = 300;
+                    duration = 0.2;
+                    break;
+            }
+
+            gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.01);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + duration);
+        }
+
+        // Countdown Timer Function
+        function updateCountdown() {
+            const targetDate = new Date('2025-11-05T00:00:00').getTime();
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            } else {
+                // If the date has passed
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Start confetti animation
+            createConfetti();
+
+            // Start countdown timer
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // Music toggle event
+            const musicToggle = document.getElementById('musicToggle');
+            musicToggle.addEventListener('click', toggleBackgroundMusic);
+
+            // Tile click events
+            const tiles = document.querySelectorAll('.tile');
+            tiles.forEach(tile => {
+                tile.addEventListener('click', () => {
+                    const soundType = tile.getAttribute('data-sound');
+                    playSound(soundType);
+                    tile.classList.add('clicked');
+                    setTimeout(() => {
+                        tile.classList.remove('clicked');
+                    }, 500);
+                });
+            });
+
+            // Auto-start music after a short delay (with user interaction)
+            setTimeout(() => {
+                toggleBackgroundMusic();
+            }, 1000);
+        });
+    </script>
+
+</body>
+
+</html>
